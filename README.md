@@ -1,2 +1,1 @@
-# Discussion
-Issue &amp; rule
+# ft_transcendence
