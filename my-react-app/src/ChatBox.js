@@ -1,29 +1,30 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useDispatch } from 'react-redux';
-import { toggleFriend } from './redux/actions/frinedActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFriend } from './redux/actions/friendActions';
 
 export default function ChatBox({ index, name, texts }) {
     const dispatch = useDispatch();
+    const idx = useSelector(state => state.friendReducer.idx);
     const [showWarning, setShowWarning] = useState(true);
 
     const handleClose = () => {
         dispatch(toggleFriend(-1));
     };
-    const [messages, setMessages] = useState([
-        { id: 1, text: "안녕하세요!", sender: "user" },
-        { id: 2, text: "안녕하세요! 무엇을 도와드릴까요?", sender: "bot" },
-    ]);
+    // const [messages, setMessages] = useState([
+    //     { id: 1, text: "안녕하세요!", sender: "user" },
+    //     { id: 2, text: "안녕하세요! 무엇을 도와드릴까요?", sender: "bot" },
+    // ]);
     
     const [message, setMessage] = useState('');
 
     const handleSendMessage = () => {
-        if (message.trim() !== '') {
-            setMessages([
-                ...messages,
-                { id: messages.length + 1, text: message, sender: "user" },
-            ]);
-            setMessage('');
-        }
+        // if (message.trim() !== '') {
+        //     setMessages([
+        //         ...messages,
+        //         { id: messages.length + 1, text: message, sender: "user" },
+        //     ]);
+        //     setMessage('');
+        // }
     };
 
     const scrollableRef = useRef(null);
@@ -38,11 +39,12 @@ export default function ChatBox({ index, name, texts }) {
             }, [index]);
 
     useEffect(() => {
+        setShowWarning(true);
         const timer = setTimeout(() => {
             setShowWarning(false); // 일정 시간이 지나면 경고 메시지를 숨긴다
-        }, 5000); // 5초 후에 메시지를 숨긴다
+        }, 8000); // 5초 후에 메시지를 숨긴다
         return () => clearTimeout(timer); // 컴포넌트가 언마운트되거나 타이머가 변경되면 타이머를 정리한다
-    }, []);
+    }, [idx]);
 
   return (
         <div className="chat-container">

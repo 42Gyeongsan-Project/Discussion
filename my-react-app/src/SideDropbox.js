@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-import { toggleFriend } from './redux/actions/frinedActions';
+import { toggleFriend } from './redux/actions/friendActions';
+import { profileFriend } from "./redux/actions/friendActions";
 
 export default function SideDropBox({ idx, dropdowns }) {
     const dispatch = useDispatch();
@@ -15,6 +16,8 @@ export default function SideDropBox({ idx, dropdowns }) {
             handleBlock();
         else if (cmd === "Unblock")
             handleUnblock();
+        else if (cmd === "Profile")
+            handleProfile();
         else
             handleDelete();
     }
@@ -39,8 +42,12 @@ export default function SideDropBox({ idx, dropdowns }) {
         console.log("Unblock!");
     };
 
+    const handleProfile = () => {
+        dispatch(profileFriend());
+    }
+
     const handleDelete = () => {
-        console.log("DelhandleDelete!");
+        console.log("Delete!");
     };
 
   return (

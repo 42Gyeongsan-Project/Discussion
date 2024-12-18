@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import "./SideBar.css"
 import Spinner from "./Spinner"
 import SideBarUser from "./SideBarUser";
 import FriendContainer from "./FriendContainer";
 import BlockedUser from "./BlockedUser";
+import Profile from "./Profile";
 
 export default function SideBar() {
     const [loading, setLoading] = useState(true);
+    const state = useSelector(state => state.profileReducer.profileIdx);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -22,6 +25,9 @@ export default function SideBar() {
                 <Spinner/>
             ) : (
                 <div id="sidebar">
+                    {state && (
+                        <Profile />
+                    )}
                     <div id="sidebar-header">
                         <h3 id="sidebar-header-text">Casual Mode</h3>
                     </div>

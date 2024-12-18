@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
 import checkboxReducer from "./checkboxReducer";
-import friendReducer from "./friendReducer";
+import { friendReducer, profileReducer } from "./friendReducer";
 
 const rootReducer = combineReducers({
   checkboxReducer,
-  friendReducer
+  friendReducer,
+  profileReducer
 });
 
 export default rootReducer;

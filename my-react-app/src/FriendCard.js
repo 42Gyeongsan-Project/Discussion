@@ -5,7 +5,13 @@ export default function FriendCard({ name, idx, rating, status, isBlock }) {
   let dropdowns = ["Play", "Chat", "Block", "Delete"];
   
   if (isBlock)
+  {
     dropdowns = ["Play", "UnBlock", "Delete"];
+    if (status !== "available")
+      dropdowns = ["UnBlock", "Delete"];
+  }
+  else if (status !== "available")
+    dropdowns = ["Chat", "Block", "Delete"];
 
   return (
     <div>

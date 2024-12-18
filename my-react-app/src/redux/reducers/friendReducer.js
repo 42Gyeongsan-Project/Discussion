@@ -1,10 +1,11 @@
-import { TOGGLE_FRIEND } from "../actions/frinedActions"
+import { TOGGLE_FRIEND, PROFILE_FRIEND } from "../actions/friendActions"
 
-const initalState = {
+const initialState = {
   idx: -1,
+  profileIdx: false,
 };
 
-const friendReducer = (state = initalState, action) => {
+export const friendReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_FRIEND:
       return {
@@ -16,4 +17,14 @@ const friendReducer = (state = initalState, action) => {
   }
 };
 
-export default friendReducer;
+export const profileReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case PROFILE_FRIEND:
+      return {
+        ...state,
+        profileIdx: !state.profileIdx,
+      };
+    default:
+      return state;
+  }
+};
