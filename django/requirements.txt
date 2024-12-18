@@ -1,0 +1,6 @@
+Django>=4.2.0
+uvicorn
+psycopg2-binary
+django-environ
+django-rest_framework
+django-oauth-toolkit

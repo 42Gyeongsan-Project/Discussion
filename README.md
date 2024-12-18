@@ -1,2 +1,0 @@
-# Discussion
-Issue &amp; rule
