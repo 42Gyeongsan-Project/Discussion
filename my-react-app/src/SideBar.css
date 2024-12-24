@@ -185,6 +185,7 @@ h3 {
     bottom: 5px;
     left: 384px;
     background-color: #97c8f3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .chat-warning {

@@ -1,13 +1,13 @@
 .profile-container {
     position: fixed;
-    background-color: red;
+    background-color:#97c8f3;
     width: 25%;
-    height: 35%;
+    height: 37%;
     z-index: 9999;
     top: 30%;
     left: 37%;
     border-radius: 15px;
-    /* display: flex; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .profile-image-container {
@@ -18,11 +18,11 @@
 }
 
 .profile-image-header {
-    background-color: blueviolet;
+    background-color: #97c8f3;
     border-radius: 8px;
     width: 100%;
     height: 10%;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
 }
 
 .profile-header {
@@ -41,58 +41,66 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: rgb(222, 231, 250);
+
+    /* background-color: rgb(172, 244, 244); */
+    border: 2px solid grey;
+    border-left: none;
+    border-right: 0px;
+    /* border-radius: 4px; */
 }
 
 .profile-image {
     width: 70%;
     border-radius: 100%;
+    border: 2px solid white;
 }
 
 .profile-image-userid {
     font-size: 20px;
     font-weight: bolder;
+    display: flex;
+    align-items: center;
 }
 
 .profile-image-login {
     font-size: 13px;
     font-family:'Times New Roman', Times, serif;
-    color: violet;
+    color: gray;
     font-weight: bold;
 }
 
-.profile-image-login1 {
-    font-size: 13px;
-    font-family:'Times New Roman', Times, serif;
-    color: violet;
-    font-weight: bold;
-}
-
-#chat-close {
+#profile-close {
     position: relative;
-    left: 94%;
-    bottom: 90%;
+    left: 93.5%;
+    bottom: 93%;
     background-color: transparent;
     color: inherit;    
     border: none;   
 }
 
 .profile-content {
-    background-color: gold;
+    background-color: rgb(222, 231, 250);
     width: 55%;
-    /* opacity: 50%; */
     display: flex;
     flex-direction: column;
+    border: solid 2px grey;
+    border-right: none;
+    border-left: 1px solid snow;
+    /* border-radius: 4px; */
 }
 
 .profile-content-box-top {
     /* opacity: 50%; */
     display: flex;
-    background: greenyellow;
-    border: 2px solid grey;
+    background: linear-gradient(45deg, gold, rgb(249, 186, 186));
+    border: 0.5px solid grey;
+    border-left: 0.2px solid grey;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 #profile-rating {
@@ -116,5 +124,104 @@
     justify-content: center;
     align-items: center;
     border: 1px solid grey;
+    border-left: 1px solid white;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     padding: 3px 5px;
 }
+
+.profile-record-top {
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-bottom: 2px solid grey;
+    padding: 2px 5px;
+    padding-bottom: 1px;
+}
+
+.profile-record {
+    font-size: 1rem;
+    font-weight: 400;
+    background: linear-gradient(45deg, #1a12fa, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-bottom {
+    display: flex;
+}
+
+.btn-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    /* background-color: bisque; */
+    padding-top: 2px;
+}
+
+.btn-container button {
+    padding: 2px 12px;
+    background-color: #0056b3;
+    /* background-color: #d41010; */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 140px;
+    /* align-items: center; */
+}
+
+.btn-container button:hover {
+    /* background-color: #0056b3; */
+    background-color: #d41010;
+}
+
+#friend-btn {
+    width: 45%;
+}
+
+#play-btn {
+    width: 100%;
+    /* width: 55%; */
+}
+
+#play {
+    padding: 2px 50px;
+}
+
+.add-btn {
+    background-color: #4caf50; /* 초록색 */
+    border-radius: 12px;
+    margin: auto;
+    margin-left: 1px;   
+    width: 34px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+  }
+
+  .add-btn:hover {
+    background-color: #45a049; /* 어두운 초록색 */
+  }
+
+  .delete-btn {
+    background-color: #f44336; /* 빨간색 */
+    border-radius: 12px;
+    margin: auto;
+    margin-left: 1px;   
+    width: 34px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .delete-btn:hover {
+    background-color: #d32f2f; /* 어두운 빨간색 */
+  }
+
+  .icon {
+    width: 18px;
+    height: 20px;
+  }
