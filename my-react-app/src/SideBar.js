@@ -6,6 +6,7 @@ import SideBarUser from "./SideBarUser";
 import FriendContainer from "./FriendContainer";
 import BlockedUser from "./BlockedUser";
 import Profile from "./Profile";
+import TopBar from "./TopBar";
 
 export default function SideBar() {
     const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ export default function SideBar() {
             { loading ? (
                 <Spinner/>
             ) : (
+                <>
                 <div id="sidebar">
                     {state && (
                         <Profile />
@@ -35,6 +37,8 @@ export default function SideBar() {
                     <FriendContainer />
                     <BlockedUser />
                 </div>
+                <TopBar />
+                </>
             )}
         </div>
     );

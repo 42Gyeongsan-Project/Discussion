@@ -1,0 +1,46 @@
+.top-bar {
+    position: fixed;
+    width: 80%;
+    height: 16%;
+    left: 20%;
+    background: linear-gradient(45deg, #27323d, #06036d);
+    /* background-color: #27323d */
+
+}
+
+.home-logo {
+    position: inherit;
+    left: 20%;
+    /* top: 1%; */
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    width: 140px;
+    cursor: pointer;
+}
+
+.home-welcome {
+    position: relative;
+    left: 12%;
+    color: grey;
+    width: 50%;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.home-welcome::before {
+    content: "42 transcendence"; /* 가상 요소 생성 */
+    position: absolute;
+    left: 0.1%;
+    top: 1%;
+    color: white;
+    /* background-color: #06036d; */
+    width: 90%;
+    font-size: 4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    z-index: -1;       /* 텍스트 위로 위치 */
+    pointer-events: none; /* 클릭 불가 */
+  }
