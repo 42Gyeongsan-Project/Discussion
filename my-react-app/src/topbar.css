@@ -139,6 +139,7 @@
     font-weight: 500;
     line-height: 1.5;
     width: 110px;
+    z-index: 99;
     /* opacity: 90%; */
   }
 
