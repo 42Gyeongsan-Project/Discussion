@@ -226,10 +226,6 @@
     cursor: pointer;
   }
 
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
 
   .dropdown-content {
     display: none; /* 기본적으로 숨김 */

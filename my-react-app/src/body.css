@@ -1,0 +1,14 @@
+.body {
+    position: absolute;
+    width: 80%;
+    height: 84%;
+    top: 16%;
+    left: 20%;
+    background: url("../public/background5.avif");
+    background-size: cover; /* 이미지가 화면에 맞게 늘어나도록 설정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center;
+}
+
+/* 1920 1080 */
+/* 1536 907*/

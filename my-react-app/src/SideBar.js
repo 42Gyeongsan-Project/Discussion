@@ -7,6 +7,7 @@ import FriendContainer from "./FriendContainer";
 import BlockedUser from "./BlockedUser";
 import Profile from "./Profile";
 import TopBar from "./TopBar";
+import Body from "./Body";
 
 export default function SideBar() {
     const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ export default function SideBar() {
                     <BlockedUser />
                 </div>
                 <TopBar />
+                <Body />
                 </>
             )}
         </div>
