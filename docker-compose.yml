@@ -9,16 +9,16 @@ services:
     volumes:
       - react-volume:/var/
     restart: always
-  postgressql:
-    container_name: postgressql
-    image: postgressql
-    build:
-      dockerfile: ./srcs/postgressql/Dockerfile
-    ports:
-      - "5432:5432"
-    volumes:
-      - db-volume:/var/lib/postgresql/data
-    restart: always
+      #postgressql:
+      #container_name: postgressql
+      #image: postgressql
+      #build:
+      #dockerfile: ./srcs/postgressql/Dockerfile
+      #ports:
+      #- "5432:5432"
+      #volumes:
+      #- db-volume:/var/lib/postgresql/data
+      #restart: always
 
 volumes:
   react-volume:
@@ -26,8 +26,8 @@ volumes:
       o: bind
       type: bind
       device: /home/ksuh/goinfre/ft_tc
-  db-volume:
-    driver_opts:
-      o: bind
-      type: bind
-      device: /home/ksuh/goinfre/data/postgressql
+        #db-volume:
+        #driver_opts:
+        #o: bind
+        #type: bind
+        #device: /home/ksuh/goinfre/data/postgressql

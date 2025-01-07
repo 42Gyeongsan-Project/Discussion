@@ -5,17 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import SideBar from "./SideBar"
+import Game from "./Game";
 
 function Home() {
   return <h2>Home Page</h2>;
 }
 
-function About() {
-  return <h2>About Page</h2>;
-}
-
-// function Contact() {
-//   return <h2>Contact Page</h2>;
+// function About() {
+//   return <h2>About Page</h2>;
 // }
 
 function Main() {
@@ -53,13 +50,13 @@ function App() {
       <nav id="nav-bar">
         <Link to="/">Main</Link>
         <Link to="/home">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/game">Game</Link>
         <Link to="/sidebar">SideBar</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/game" element={<Game />} />
         <Route path="/sidebar" element={<SideBar />} />
       </Routes>
     </Router>

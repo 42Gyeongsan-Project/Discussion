@@ -1,14 +1,14 @@
-.body {
+    .body {
     position: absolute;
     width: 80%;
     height: 84%;
     top: 16%;
     left: 20%;
-    background: url("../public/background5.avif");
-    background-size: cover; /* 이미지가 화면에 맞게 늘어나도록 설정 */
-    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    /* background: url("../public/background5.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
-    z-index: -1;
+    z-index: -1; */
 }
 
 .game-button-container {
@@ -23,10 +23,10 @@
     font-size: 3rem;
     padding: 3px 40px;
     border-radius: 50px;
-    letter-spacing: 4px;
+    letter-spacing: 1.5px;
     /* font-family:; */
     font-weight: 600;
-    background: rgb(2, 235, 13);
+    background: rgb(10, 207, 20);
     transition: transform 0.3s ease;
 }
 
