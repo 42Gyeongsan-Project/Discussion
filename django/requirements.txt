@@ -1,0 +1,10 @@
+Django>=4.2.0
+uvicorn
+psycopg2-binary
+django-environ
+django-oauth-toolkit
+djangorestframework
+channels
+websockets
+channels_redis
+django-cors-headers
