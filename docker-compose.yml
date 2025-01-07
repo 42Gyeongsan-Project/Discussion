@@ -24,6 +24,7 @@ services:
     volumes:
         - nginx_conf:/etc/nginx/conf.d
         - static_vol:/home/staticfiles
+        - build_vol:/home/build
     ports:
       - "8080:8080"
 
@@ -52,6 +53,14 @@ services:
       - transcendence
     ports:
       - "6380:6379"
+  
+  react:
+    image: react
+    build: ./react
+    ports:
+      - "3000:3000"
+    volumes:
+      - react_vol:/var/
 
 networks:
   transcendence:
@@ -93,3 +102,17 @@ volumes:
       type: none
       o: bind
       device: ${PWD}
+  
+  react_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/react/react_vol
+  
+  build_vol:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/react/react_vol/my-react-app/build

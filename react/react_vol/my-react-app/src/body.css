@@ -1,0 +1,52 @@
+    .body {
+    position: absolute;
+    width: 80%;
+    height: 84%;
+    top: 16%;
+    left: 20%;
+    /* background: url("../public/background5.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1; */
+}
+
+.game-button-container {
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    /* background: red; */
+}
+
+.game-button {
+    /* width: 300px; */
+    font-size: 3rem;
+    padding: 3px 40px;
+    border-radius: 50px;
+    letter-spacing: 1.5px;
+    /* font-family:; */
+    font-weight: 600;
+    background: rgb(10, 207, 20);
+    transition: transform 0.3s ease;
+}
+
+.game-button-p {
+    margin: 0;
+}
+
+.game-button:hover {
+    background-color: rgb(4, 226, 15);
+}
+
+.game-button:hover p {
+    animation: bounce 0.6s ease-in-out 3;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); } /* 위로 이동 */
+    100% { transform: translateY(0); } /* 원래 위치로 복귀 */
+}
+
+/* 1920 1080 */
+/* 1536 907*/
