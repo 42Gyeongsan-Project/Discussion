@@ -224,3 +224,5 @@ WARNING 2025-01-07 16:08:18,312 Room hello is full. Connection rejected.
 ERROR 2025-01-07 16:08:44,978 Error in game loop: cannot access local variable 'frame_per_second' where it is not associated with a value
 ERROR 2025-01-07 16:08:44,979 Error in game loop: cannot access local variable 'frame_per_second' where it is not associated with a value
 WARNING 2025-01-07 16:08:53,857 Room hello is full. Connection rejected.
+ERROR 2025-01-07 16:45:02,563 Error in game loop: cannot access local variable 'frame_per_second' where it is not associated with a value
+ERROR 2025-01-07 17:06:47,627 Disconnect error: Error while reading from redis:6379 : (104, 'Connection reset by peer')
