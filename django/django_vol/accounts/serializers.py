@@ -11,3 +11,11 @@ class UserSerializer(serializers.ModelSerializer):
 	
 	def get_is_online(self, obj):
 		return obj.profile.is_online if hasattr(obj, 'profile') else False
+
+class ProfileSerializer(serializers.ModelSerializer):
+	username = serializers.CharField(source='user.username', read_only=True)
+
+	class Meta:
+		model = Profile
+		fields = ['username', 'image', 'win_count', 'lose_count', 'status']
+		

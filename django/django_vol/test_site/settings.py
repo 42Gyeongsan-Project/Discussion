@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['10.12.9.1', 'localhost', '127.0.0.1' , '211.194.206.182', '10.12.8.3']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://10.12.8.3:8080'
+    'http://10.12.8.3:8080',
     'http://10.12.9.1:8080',
 	'http://211.194.206.182:8080',
 	'http://localhost:8080',
@@ -200,26 +200,38 @@ REST_FRAMEWORK = {
 LOGGING = {
    'version': 1,
    'disable_existing_loggers': False,
-    'formatters':{ # 추가
-         'simple':{
-            'format':'%(levelname)s %(asctime)s %(message)s'
-        }
+    'formatters':{
+         'standard':{
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
     },
     'handlers': {
-       'file': {
-            'class': 'logging.FileHandler',
-            'filename': './app.log',  # 프로젝트 내부의 상대 경로
-            'formatter': 'simple'
-       },
+        'logstash': {
+            'level': 'INFO',
+            'class': 'logstash.TCPLogstashHandler',
+            'host': 'logstash',
+            'port': 5000,
+            'version': 1,
+            'message_type': 'django',
+            'fqdn': False,
+            'tags': ['dajngo']
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
-            'level': 'INFO',
+            'handlers': ['logstash', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
         },
-       '': {
-            'handlers': ['file'],
-            'level': 'INFO'
-        }
+        'django.server': {
+            'handlers': ['logstash', 'console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
     },
 }

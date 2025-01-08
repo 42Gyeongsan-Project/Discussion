@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import viewsets, status
 from django.contrib.auth.models import User
 from .models import Profile
-from .serializers import UserSerializer
+from .serializers import UserSerializer, ProfileSerializer
 from django.contrib.auth import logout, login
 from .services import get_oauth_tokens, get_user_info, create_or_update_user
 
@@ -28,6 +28,19 @@ class UserViewSet(viewsets.ModelViewSet):
 		online_users = User.objects.filter(profile__is_online=True)
 		usernames = [user.username for user in online_users]
 		return Response({'users': usernames})
+
+	@action(detail=True, methods=['get'], url_path='profile')
+	def get_profile(self, request, pk=None):
+		if pk == 'me':
+			profile = request.user.profile
+		else:
+			try:
+				profile = self.get_queryset().get(pk=pk).profile
+			except User.DoesNotExist:
+				return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+		serializer = ProfileSerializer(profile)
+		return Response(serializer.data)
 
 class OAuthViewSet(viewsets.ViewSet):
 	permission_classes = [IsAuthenticated]

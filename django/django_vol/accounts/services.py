@@ -39,6 +39,7 @@ def create_or_update_user(user_info):
     first_name = user_info.get('first_name')
     last_name = user_info.get('last_name')
     email = user_info.get('email')
+    image = user_info.get('image', {}).get('link')
 
     user, created = User.objects.get_or_create(
         username=username,
@@ -53,6 +54,8 @@ def create_or_update_user(user_info):
         Profile.objects.create(user=user)
         
     user.profile.is_online = True
+    user.profile.status = "available"
+    user.profile.image = image
     user.profile.save()
     
     return user
