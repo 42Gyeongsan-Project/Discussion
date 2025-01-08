@@ -16,7 +16,10 @@ export default function SideBarUser() {
         try {
             const response = await fetch('/api/oauth/logout/', {
                 method: 'GET'
-            });
+            })
+            // const response = await fetch('/api/user/online-users/', {
+            //     method: 'GET'
+            // });
 
             const data = await response.json(); // JSON 형식의 데이터
             if (data)

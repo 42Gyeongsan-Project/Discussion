@@ -8,3 +8,5 @@ channels
 websockets
 channels_redis
 django-cors-headers
+python-logstash
+elasticsearch
