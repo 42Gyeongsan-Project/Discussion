@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['10.12.9.1', 'localhost', '127.0.0.1' , '211.194.206.182', '10.12.8.3']
 
 CSRF_TRUSTED_ORIGINS = [
+    'http://10.12.8.3:8080'
     'http://10.12.9.1:8080',
 	'http://211.194.206.182:8080',
 	'http://localhost:8080',

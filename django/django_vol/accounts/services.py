@@ -1,13 +1,13 @@
 import requests
 from django.contrib.auth.models import User
-from accounts.models import Profile
+from .models import Profile
 from django.conf import settings
 
 def get_oauth_tokens(code):
     token_url = 'https://api.intra.42.fr/oauth/token'
     client_id = settings.CLIENT_ID
     client_secret = settings.CLIENT_SECRET
-    redirect_uri = 'http://10.12.9.1:8080/callback/'
+    redirect_uri = 'http://10.12.8.3:8080/api/oauth/callback/'
 
     data = {
         'grant_type': 'authorization_code',

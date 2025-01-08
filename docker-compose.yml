@@ -56,6 +56,7 @@ services:
   
   react:
     image: react
+    container_name: react
     build: ./react
     ports:
       - "3000:3000"

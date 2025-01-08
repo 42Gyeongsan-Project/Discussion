@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from accounts.views import UserViewSet
+from accounts.views import UserViewSet, OAuthViewSet
 # from api.views import UserViewSet, TournamentViewSet, MatchViewSet
 
 router = DefaultRouter()
 router.register(r'user', UserViewSet)
+router.register(r'oauth', OAuthViewSet, basename='oauth')
 # router.register(r'tournament', TournamentViewSet)
 # router.register(r'match', MatchViewSet)
 

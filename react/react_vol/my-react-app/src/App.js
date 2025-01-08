@@ -15,6 +15,13 @@ function Home() {
 //   return <h2>About Page</h2>;
 // }
 
+function login() {
+  const clientId = 'u-s4t2ud-2f36542895ec170f78a3b16b336312f13826f4f1cc5a856127e0bd6119deefcd';
+  const redirectUri = encodeURIComponent('http://10.12.8.3:8080/api/oauth/callback/');
+  const authUrl = `https://api.intra.42.fr/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code`;
+  window.location.href = authUrl;
+}
+
 function Main() {
   return (
       <div>
@@ -30,7 +37,7 @@ function Main() {
         </div>
         <div className="main-auth-container">
           <button className="button"><img id="google-icon" src="/google-icon.png"/>continue with google</button>
-          <button className="button" id="button-42"><img id="four-icon" src="/42-icon.png" />continue with intra</button>
+          <button className="button" id="button-42" onClick={login}><img id="four-icon" src="/42-icon.png" />continue with intra</button>
         </div>
       </div>
   );

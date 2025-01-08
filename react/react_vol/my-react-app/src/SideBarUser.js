@@ -14,7 +14,7 @@ export default function SideBarUser() {
 
     const getData = async () => {
         try {
-            const response = await fetch('/get-data', {
+            const response = await fetch('/api/oauth/logout/', {
                 method: 'GET'
             });
 
